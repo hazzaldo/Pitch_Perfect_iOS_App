@@ -20,38 +20,52 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W83-Mf-zLz">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="microphone"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="151" y="250" width="100" height="100"/>
-                                </variation>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8rh-es-0Vh"/>
                                 </connections>
                             </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-NU-8gy">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bAm-u0-lLh"/>
+                            <constraint firstItem="YmT-NU-8gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgK-oF-IVI"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oHp-Tt-K1A"/>
+                            <constraint firstItem="YmT-NU-8gy" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="8" id="rRF-gb-gBF"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="W83-Mf-zLz"/>
+                                <exclude reference="YmT-NU-8gy"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="bAm-u0-lLh"/>
                                 <exclude reference="oHp-Tt-K1A"/>
+                                <exclude reference="cgK-oF-IVI"/>
+                                <exclude reference="rRF-gb-gBF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="W83-Mf-zLz"/>
+                                <include reference="YmT-NU-8gy"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="bAm-u0-lLh"/>
                                 <include reference="oHp-Tt-K1A"/>
+                                <include reference="cgK-oF-IVI"/>
+                                <include reference="rRF-gb-gBF"/>
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="recordingInProgress" destination="YmT-NU-8gy" id="zgg-EU-iLT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
