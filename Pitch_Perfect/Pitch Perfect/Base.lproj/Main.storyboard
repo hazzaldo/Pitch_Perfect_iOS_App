@@ -30,11 +30,23 @@
                                 <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbf-tY-O60">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="148" y="410" width="104" height="50"/>
+                                </variation>
+                                <connections>
+                                    <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhq-f9-BpZ"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="gbf-tY-O60" firstAttribute="centerX" secondItem="W83-Mf-zLz" secondAttribute="centerX" id="TH7-8B-ibT"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bAm-u0-lLh"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgK-oF-IVI"/>
+                            <constraint firstItem="gbf-tY-O60" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="70" id="i0O-nC-u1L"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oHp-Tt-K1A"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="8" id="rRF-gb-gBF"/>
                         </constraints>
@@ -42,24 +54,30 @@
                             <mask key="subviews">
                                 <exclude reference="W83-Mf-zLz"/>
                                 <exclude reference="YmT-NU-8gy"/>
+                                <exclude reference="gbf-tY-O60"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="bAm-u0-lLh"/>
                                 <exclude reference="oHp-Tt-K1A"/>
                                 <exclude reference="cgK-oF-IVI"/>
                                 <exclude reference="rRF-gb-gBF"/>
+                                <exclude reference="TH7-8B-ibT"/>
+                                <exclude reference="i0O-nC-u1L"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="W83-Mf-zLz"/>
                                 <include reference="YmT-NU-8gy"/>
+                                <include reference="gbf-tY-O60"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="bAm-u0-lLh"/>
                                 <include reference="oHp-Tt-K1A"/>
                                 <include reference="cgK-oF-IVI"/>
                                 <include reference="rRF-gb-gBF"/>
+                                <include reference="TH7-8B-ibT"/>
+                                <include reference="i0O-nC-u1L"/>
                             </mask>
                         </variation>
                     </view>
@@ -73,5 +91,6 @@
     </scenes>
     <resources>
         <image name="microphone" width="100" height="100"/>
+        <image name="stop" width="50" height="50"/>
     </resources>
 </document>
