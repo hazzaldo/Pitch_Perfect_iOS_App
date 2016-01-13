@@ -17,6 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-NU-8gy">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W83-Mf-zLz">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="microphone"/>
@@ -24,18 +30,9 @@
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8rh-es-0Vh"/>
                                 </connections>
                             </button>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YmT-NU-8gy">
-                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <color key="textColor" red="0.14509803921568626" green="0.28235294117647058" blue="0.43137254901960786" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbf-tY-O60">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" image="stop"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="148" y="410" width="104" height="50"/>
-                                </variation>
                                 <connections>
                                     <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhq-f9-BpZ"/>
                                 </connections>
@@ -52,37 +49,39 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="W83-Mf-zLz"/>
                                 <exclude reference="YmT-NU-8gy"/>
+                                <exclude reference="W83-Mf-zLz"/>
                                 <exclude reference="gbf-tY-O60"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="bAm-u0-lLh"/>
                                 <exclude reference="oHp-Tt-K1A"/>
-                                <exclude reference="cgK-oF-IVI"/>
-                                <exclude reference="rRF-gb-gBF"/>
                                 <exclude reference="TH7-8B-ibT"/>
                                 <exclude reference="i0O-nC-u1L"/>
+                                <exclude reference="cgK-oF-IVI"/>
+                                <exclude reference="rRF-gb-gBF"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="W83-Mf-zLz"/>
                                 <include reference="YmT-NU-8gy"/>
+                                <include reference="W83-Mf-zLz"/>
                                 <include reference="gbf-tY-O60"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="bAm-u0-lLh"/>
                                 <include reference="oHp-Tt-K1A"/>
-                                <include reference="cgK-oF-IVI"/>
-                                <include reference="rRF-gb-gBF"/>
                                 <include reference="TH7-8B-ibT"/>
                                 <include reference="i0O-nC-u1L"/>
+                                <include reference="cgK-oF-IVI"/>
+                                <include reference="rRF-gb-gBF"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="recordButton" destination="W83-Mf-zLz" id="g5I-5I-yH7"/>
                         <outlet property="recordingInProgress" destination="YmT-NU-8gy" id="zgg-EU-iLT"/>
+                        <outlet property="stopButton" destination="gbf-tY-O60" id="CTX-zE-1bC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
