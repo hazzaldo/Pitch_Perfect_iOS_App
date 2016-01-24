@@ -1,5 +1,5 @@
 //
-//  PlaySoundViewController.swift
+//  PlaySoundsViewController.swift
 //  Pitch Perfect
 //
 //  Created by Hareth Naji on 25/01/2016.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PlaySoundViewController: UIViewController {
+class PlaySoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
