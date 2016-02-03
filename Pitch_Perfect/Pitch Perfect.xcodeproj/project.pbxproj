@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		493252131C599B02003EB929 /* movie_quote.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 493252121C599B02003EB929 /* movie_quote.mp3 */; };
 		49BEFBA01C3B2F16007B4B4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEFB9F1C3B2F16007B4B4C /* AppDelegate.swift */; };
 		49BEFBA21C3B2F16007B4B4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEFBA11C3B2F16007B4B4C /* ViewController.swift */; };
 		49BEFBA51C3B2F16007B4B4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49BEFBA31C3B2F16007B4B4C /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		493252121C599B02003EB929 /* movie_quote.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = movie_quote.mp3; sourceTree = "<group>"; };
 		49BEFB9C1C3B2F16007B4B4C /* Pitch Perfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pitch Perfect.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49BEFB9F1C3B2F16007B4B4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49BEFBA11C3B2F16007B4B4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		493252111C599B02003EB929 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				493252121C599B02003EB929 /* movie_quote.mp3 */,
+			);
+			path = sound;
+			sourceTree = "<group>";
+		};
 		49BEFB931C3B2F15007B4B4C = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +113,7 @@
 				49BEFB9F1C3B2F16007B4B4C /* AppDelegate.swift */,
 				49BEFBA11C3B2F16007B4B4C /* ViewController.swift */,
 				49BEFBA31C3B2F16007B4B4C /* Main.storyboard */,
+				493252111C599B02003EB929 /* sound */,
 				49BEFBA61C3B2F16007B4B4C /* Assets.xcassets */,
 				49BEFBA81C3B2F16007B4B4C /* LaunchScreen.storyboard */,
 				49BEFBAB1C3B2F16007B4B4C /* Info.plist */,
@@ -237,6 +248,7 @@
 			files = (
 				49BEFBAA1C3B2F16007B4B4C /* LaunchScreen.storyboard in Resources */,
 				49BEFBA71C3B2F16007B4B4C /* Assets.xcassets in Resources */,
+				493252131C599B02003EB929 /* movie_quote.mp3 in Resources */,
 				49BEFBA51C3B2F16007B4B4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
