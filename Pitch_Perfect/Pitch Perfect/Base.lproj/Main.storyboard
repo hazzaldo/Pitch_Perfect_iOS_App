@@ -111,28 +111,58 @@
                                     <action selector="playSlowAudio:" destination="XSJ-fF-eoS" eventType="touchUpInside" id="iLz-LI-Hhf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPD-3f-GIP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="fast"/>
+                                <connections>
+                                    <action selector="playFastAudio:" destination="XSJ-fF-eoS" eventType="touchUpInside" id="z3g-Hu-BFc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fx-IW-Ig7">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="stop"/>
+                                <connections>
+                                    <action selector="stopAudio:" destination="XSJ-fF-eoS" eventType="touchUpInside" id="xfO-3D-5B2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="47s-Jr-bws"/>
+                            <constraint firstItem="XPD-3f-GIP" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="50m-4P-wbw"/>
+                            <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerX" secondItem="biu-dI-quo" secondAttribute="centerX" id="6yc-ei-7lT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XPD-3f-GIP" secondAttribute="trailing" constant="30" id="Omh-cH-gO2"/>
+                            <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerY" secondItem="biu-dI-quo" secondAttribute="centerY" id="TvY-Dh-KR4"/>
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="ZW6-Us-PPv"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="KiS-PS-AQn"/>
+                                <exclude reference="XPD-3f-GIP"/>
+                                <exclude reference="5fx-IW-Ig7"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="47s-Jr-bws"/>
                                 <exclude reference="ZW6-Us-PPv"/>
+                                <exclude reference="50m-4P-wbw"/>
+                                <exclude reference="Omh-cH-gO2"/>
+                                <exclude reference="6yc-ei-7lT"/>
+                                <exclude reference="TvY-Dh-KR4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="KiS-PS-AQn"/>
+                                <include reference="XPD-3f-GIP"/>
+                                <include reference="5fx-IW-Ig7"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="47s-Jr-bws"/>
                                 <include reference="ZW6-Us-PPv"/>
+                                <include reference="50m-4P-wbw"/>
+                                <include reference="Omh-cH-gO2"/>
+                                <include reference="6yc-ei-7lT"/>
+                                <include reference="TvY-Dh-KR4"/>
                             </mask>
                         </variation>
                     </view>
@@ -161,6 +191,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
         <image name="stop" width="50" height="50"/>
