@@ -10,7 +10,7 @@
         <!--Record-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RecordSoundsViewController" customModule="Pitch_Perfect" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -132,8 +132,8 @@
                             <constraint firstItem="XPD-3f-GIP" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="50m-4P-wbw"/>
                             <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerX" secondItem="biu-dI-quo" secondAttribute="centerX" id="6yc-ei-7lT"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPD-3f-GIP" secondAttribute="trailing" constant="30" id="Omh-cH-gO2"/>
-                            <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerY" secondItem="biu-dI-quo" secondAttribute="centerY" id="TvY-Dh-KR4"/>
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="ZW6-Us-PPv"/>
+                            <constraint firstItem="bFM-0b-oEE" firstAttribute="top" secondItem="5fx-IW-Ig7" secondAttribute="bottom" constant="100" id="rIG-gE-xvE"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -142,12 +142,12 @@
                                 <exclude reference="5fx-IW-Ig7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="rIG-gE-xvE"/>
+                                <exclude reference="6yc-ei-7lT"/>
                                 <exclude reference="47s-Jr-bws"/>
                                 <exclude reference="ZW6-Us-PPv"/>
                                 <exclude reference="50m-4P-wbw"/>
                                 <exclude reference="Omh-cH-gO2"/>
-                                <exclude reference="6yc-ei-7lT"/>
-                                <exclude reference="TvY-Dh-KR4"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -157,12 +157,12 @@
                                 <include reference="5fx-IW-Ig7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="rIG-gE-xvE"/>
+                                <include reference="6yc-ei-7lT"/>
                                 <include reference="47s-Jr-bws"/>
                                 <include reference="ZW6-Us-PPv"/>
                                 <include reference="50m-4P-wbw"/>
                                 <include reference="Omh-cH-gO2"/>
-                                <include reference="6yc-ei-7lT"/>
-                                <include reference="TvY-Dh-KR4"/>
                             </mask>
                         </variation>
                     </view>
