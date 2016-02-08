@@ -9,9 +9,10 @@
 import UIKit
 import AVFoundation
 
-var audioPlayer:AVAudioPlayer!
-
 class PlaySoundsViewController: UIViewController {
+    
+    var audioPlayer:AVAudioPlayer!
+    var receivedAudio:RecordedAudio!
 
     override func viewDidLoad() {
         super.viewDidLoad()

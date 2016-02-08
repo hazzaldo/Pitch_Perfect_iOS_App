@@ -37,17 +37,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func stopAction(sender: UIButton) {
-        //TODO: Hide 'recording' label
-        recordingInProgress.hidden = true
-        //enable record button
-        recordButton.enabled = true
-        //TODO: stop recording
-        audioRecorder.stop()
-        let audioSession = AVAudioSession.sharedInstance()
-        try! audioSession.setActive(false)
-    }
-
     @IBAction func recordAudio(sender: UIButton) {
         //show text "Recording in progress"
         recordingInProgress.hidden = false
@@ -119,6 +108,35 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             stopButton.hidden = true
         }
     }
+    //This function is where we pass objects before moving to the next VC
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        /*this step becomes even more important when we have multiple segues 
+        from the same VC
+        */
+        if (segue.identifier == "stopRecording"){
+            /* where destination ViewController is PlaySoundsViewController
+             assigned to variable playSoundsVC
+            */
+            let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
+            /* where object (sender:AnyObject) to initiate segue is RecordedAudio 
+            (where audio file path and name is saved) and assigned to data variable
+            */
+            let data = sender as! RecordedAudio
+            playSoundsVC.receivedAudio = data
+        }
+    }
+    
+    @IBAction func stopAction(sender: UIButton) {
+        //TODO: Hide 'recording' label
+        recordingInProgress.hidden = true
+        //enable record button
+        recordButton.enabled = true
+        //TODO: stop recording
+        audioRecorder.stop()
+        let audioSession = AVAudioSession.sharedInstance()
+        try! audioSession.setActive(false)
+    }
+
 }
 
 
