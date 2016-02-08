@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 
 
-class RecordSoundsViewController: UIViewController {
+class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     //Declare Globally A variable is created for audioRecorder
     var audioRecorder:AVAudioRecorder!
@@ -51,6 +51,8 @@ class RecordSoundsViewController: UIViewController {
         //The file will be saved in the documents directory
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
                                         .UserDomainMask, true)[0] as String
+        
+        /* The commented-out code is to name recorded audio files using date & time stamp
         //The current date is retrieved
         let currentDateTime = NSDate()
         //The object that will format the date is created
@@ -59,6 +61,9 @@ class RecordSoundsViewController: UIViewController {
         formatter.dateFormat = "ddMMyyyy-HHmmss"
         //The .wav file is named with the date & time of the recording
         let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
+        */
+        //set the name of the recording to "my_audio"
+        let recordingName = "my_audio.wav"
         //The location of the file and the file name are placed in an array
         let pathArray = [dirPath, recordingName]
         //The file path is created as a constant with the contents of the array
@@ -71,6 +76,10 @@ class RecordSoundsViewController: UIViewController {
         try! session.setCategory(AVAudioSessionCategoryPlayAndRecord)
         //The file path is assigned to the file that will be created in this recording session
         try! audioRecorder = AVAudioRecorder(URL: filePath!, settings: [:])
+        /* Set RecordSoundsViewController as the delegate of audioRecorder
+        (an instance of AVAudioRecorder) to implement functions from the protocol AVAudioRecorderDelegate, functions in this case
+        */
+        audioRecorder.delegate = self
         //Audio metering is enabled for the file that will be created
         audioRecorder.meteringEnabled = true
         //The app begins the recording
@@ -82,8 +91,11 @@ class RecordSoundsViewController: UIViewController {
         recordButton.enabled = false
         //show stopButton
         stopButton.hidden = false
-        //output "in recordAudio" to see if the button function works
-        print ("in recordAudio")
+        //This method/function is where all the coding goes after the audio finish recording
+        audioRecorderDidFinishRecording(<#T##recorder: AVAudioRecorder##AVAudioRecorder#>, successfully: <#T##Bool#>)
+        //TODO: Step 1- save the recorded audio
+        
+        //TODO: Step 2- Move to the next scene aka perform segue
     }
 }
 
