@@ -16,6 +16,8 @@ class PlaySoundsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /* Use this code to play the movie quote audio file
         // Do any additional setup after loading the view.
         let string_path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
         let url_path = NSURL.fileURLWithPath(string_path!)
@@ -23,6 +25,13 @@ class PlaySoundsViewController: UIViewController {
             audioPlayer = try AVAudioPlayer(contentsOfURL: url_path)
             audioPlayer.enableRate = true
         } catch {
+            print("No sound file found. Please check directory where sound file is expected and file type")
+        }
+        */
+        do{
+        audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
+        audioPlayer.enableRate = true
+        }catch{
             print("No sound file found. Please check directory where sound file is expected and file type")
         }
     }

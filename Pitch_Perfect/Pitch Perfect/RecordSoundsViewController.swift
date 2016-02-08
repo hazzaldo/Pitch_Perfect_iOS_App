@@ -92,7 +92,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             /*set the value of filePath attribute to the path of the audio
             file being currently saved on the phone
             */
-            recordedAudio.filePath = recorder.url
+            recordedAudio.filePathUrl = recorder.url
             /*set the value of title attribute to the name 
             (known as lastPathComponent) of the audio
             file being currently saved on the phone
@@ -118,7 +118,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
              assigned to variable playSoundsVC
             */
             let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
-            /* where object (sender:AnyObject) to initiate segue is RecordedAudio 
+            /* where object (sender:AnyObject) to initiate segue is RecordedAudio
             (where audio file path and name is saved) and assigned to data variable
             */
             let data = sender as! RecordedAudio
