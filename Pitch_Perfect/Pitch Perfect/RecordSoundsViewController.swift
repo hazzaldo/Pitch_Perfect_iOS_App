@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     //Declare Globally A variable is created for audioRecorder
     var audioRecorder:AVAudioRecorder!
+    var recordedAudio:RecordedAudio!
     
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
@@ -48,10 +49,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
 
     @IBAction func recordAudio(sender: UIButton) {
+        //show text "Recording in progress"
+        recordingInProgress.hidden = false
+        //Disable record button
+        recordButton.enabled = false
+        //show stopButton
+        stopButton.hidden = false
         //The file will be saved in the documents directory
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
                                         .UserDomainMask, true)[0] as String
-        
         /* The commented-out code is to name recorded audio files using date & time stamp
         //The current date is retrieved
         let currentDateTime = NSDate()
@@ -85,17 +91,37 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         //The app begins the recording
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-        //show text "Recording in progress"
-        recordingInProgress.hidden = false
-        //Disable record button
-        recordButton.enabled = false
-        //show stopButton
-        stopButton.hidden = false
-        //This method/function is where all the coding goes after the audio finish recording
-        audioRecorderDidFinishRecording(<#T##recorder: AVAudioRecorder##AVAudioRecorder#>, successfully: <#T##Bool#>)
-        //TODO: Step 1- save the recorded audio
+      
+    }
+    
+     //This method/function is where all the coding goes after the audio finish recording
+    func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
+        if (flag) {
+        //Step 1- save the recorded audio
+            //intialise recordedAudio as an instance of RecordedAudio class
+            recordedAudio = RecordedAudio()
+            /*set the value of filePath attribute to the path of the audio
+            file being currently saved on the phone
+            */
+            recordedAudio.filePath = recorder.url
+            /*set the value of title attribute to the name 
+            (known as lastPathComponent) of the audio
+            file being currently saved on the phone
+            */
+            recordedAudio.title = recorder.url.lastPathComponent
         
-        //TODO: Step 2- Move to the next scene aka perform segue
+            //TODO: Step 2- Move to the next scene aka perform segue
+            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+        }else{
+          print("Recording was not successful")
+            recordingInProgress.hidden = true
+            recordButton.enabled = true
+            stopButton.hidden = true
+        }
     }
 }
+
+
+
+
 
