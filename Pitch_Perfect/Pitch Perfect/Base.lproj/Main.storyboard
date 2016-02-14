@@ -39,29 +39,48 @@
                                     <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhq-f9-BpZ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fh-QK-k2s">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <string key="text">Press the record button (mic button below) to start recording audio. Once you finish recording press the Stop button (square button) which will appear when you press the record button.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="75" y="156" width="248" height="70"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="5fh-QK-k2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PJi-pD-hxC"/>
                             <constraint firstItem="gbf-tY-O60" firstAttribute="centerX" secondItem="W83-Mf-zLz" secondAttribute="centerX" id="TH7-8B-ibT"/>
+                            <constraint firstItem="5fh-QK-k2s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="aZv-p9-3Go"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bAm-u0-lLh"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgK-oF-IVI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5fh-QK-k2s" secondAttribute="trailing" constant="30" id="dzD-Ef-Dwy"/>
                             <constraint firstItem="gbf-tY-O60" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="70" id="i0O-nC-u1L"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oHp-Tt-K1A"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="8" id="rRF-gb-gBF"/>
+                            <constraint firstItem="W83-Mf-zLz" firstAttribute="top" secondItem="5fh-QK-k2s" secondAttribute="bottom" constant="20" id="yy3-17-Mzq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="YmT-NU-8gy"/>
                                 <exclude reference="W83-Mf-zLz"/>
                                 <exclude reference="gbf-tY-O60"/>
+                                <exclude reference="5fh-QK-k2s"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="PJi-pD-hxC"/>
+                                <exclude reference="aZv-p9-3Go"/>
+                                <exclude reference="dzD-Ef-Dwy"/>
                                 <exclude reference="bAm-u0-lLh"/>
                                 <exclude reference="oHp-Tt-K1A"/>
-                                <exclude reference="TH7-8B-ibT"/>
-                                <exclude reference="i0O-nC-u1L"/>
+                                <exclude reference="yy3-17-Mzq"/>
                                 <exclude reference="cgK-oF-IVI"/>
                                 <exclude reference="rRF-gb-gBF"/>
+                                <exclude reference="TH7-8B-ibT"/>
+                                <exclude reference="i0O-nC-u1L"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -69,14 +88,19 @@
                                 <include reference="YmT-NU-8gy"/>
                                 <include reference="W83-Mf-zLz"/>
                                 <include reference="gbf-tY-O60"/>
+                                <include reference="5fh-QK-k2s"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="PJi-pD-hxC"/>
+                                <include reference="aZv-p9-3Go"/>
+                                <include reference="dzD-Ef-Dwy"/>
                                 <include reference="bAm-u0-lLh"/>
                                 <include reference="oHp-Tt-K1A"/>
-                                <include reference="TH7-8B-ibT"/>
-                                <include reference="i0O-nC-u1L"/>
+                                <include reference="yy3-17-Mzq"/>
                                 <include reference="cgK-oF-IVI"/>
                                 <include reference="rRF-gb-gBF"/>
+                                <include reference="TH7-8B-ibT"/>
+                                <include reference="i0O-nC-u1L"/>
                             </mask>
                         </variation>
                     </view>
