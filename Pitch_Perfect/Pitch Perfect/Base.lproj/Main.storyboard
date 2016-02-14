@@ -132,6 +132,13 @@
                                     <action selector="playChipmunkAudio:" destination="XSJ-fF-eoS" eventType="touchUpInside" id="6ks-sb-Be1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywa-Hy-63h">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="darthvader"/>
+                                <connections>
+                                    <action selector="playDarthVaderAudio:" destination="XSJ-fF-eoS" eventType="touchUpInside" id="ewQ-Bi-DuJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,7 +146,9 @@
                             <constraint firstItem="XPD-3f-GIP" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="50m-4P-wbw"/>
                             <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerX" secondItem="biu-dI-quo" secondAttribute="centerX" id="6yc-ei-7lT"/>
                             <constraint firstItem="Z8n-7T-R4b" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="Azt-kr-PHf"/>
+                            <constraint firstItem="Ywa-Hy-63h" firstAttribute="top" secondItem="XPD-3f-GIP" secondAttribute="bottom" constant="36" id="F4X-Tb-W10"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPD-3f-GIP" secondAttribute="trailing" constant="30" id="Omh-cH-gO2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ywa-Hy-63h" secondAttribute="trailing" constant="30" id="WkV-rn-alg"/>
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="ZW6-Us-PPv"/>
                             <constraint firstItem="bFM-0b-oEE" firstAttribute="top" secondItem="5fx-IW-Ig7" secondAttribute="bottom" constant="100" id="rIG-gE-xvE"/>
                             <constraint firstItem="Z8n-7T-R4b" firstAttribute="top" secondItem="KiS-PS-AQn" secondAttribute="bottom" constant="36" id="xDq-zx-Joq"/>
@@ -150,16 +159,19 @@
                                 <exclude reference="XPD-3f-GIP"/>
                                 <exclude reference="5fx-IW-Ig7"/>
                                 <exclude reference="Z8n-7T-R4b"/>
+                                <exclude reference="Ywa-Hy-63h"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="rIG-gE-xvE"/>
-                                <exclude reference="6yc-ei-7lT"/>
                                 <exclude reference="47s-Jr-bws"/>
                                 <exclude reference="ZW6-Us-PPv"/>
-                                <exclude reference="50m-4P-wbw"/>
-                                <exclude reference="Omh-cH-gO2"/>
                                 <exclude reference="Azt-kr-PHf"/>
                                 <exclude reference="xDq-zx-Joq"/>
+                                <exclude reference="50m-4P-wbw"/>
+                                <exclude reference="Omh-cH-gO2"/>
+                                <exclude reference="F4X-Tb-W10"/>
+                                <exclude reference="WkV-rn-alg"/>
+                                <exclude reference="6yc-ei-7lT"/>
+                                <exclude reference="rIG-gE-xvE"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -168,16 +180,19 @@
                                 <include reference="XPD-3f-GIP"/>
                                 <include reference="5fx-IW-Ig7"/>
                                 <include reference="Z8n-7T-R4b"/>
+                                <include reference="Ywa-Hy-63h"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="rIG-gE-xvE"/>
-                                <include reference="6yc-ei-7lT"/>
                                 <include reference="47s-Jr-bws"/>
                                 <include reference="ZW6-Us-PPv"/>
-                                <include reference="50m-4P-wbw"/>
-                                <include reference="Omh-cH-gO2"/>
                                 <include reference="Azt-kr-PHf"/>
                                 <include reference="xDq-zx-Joq"/>
+                                <include reference="50m-4P-wbw"/>
+                                <include reference="Omh-cH-gO2"/>
+                                <include reference="F4X-Tb-W10"/>
+                                <include reference="WkV-rn-alg"/>
+                                <include reference="6yc-ei-7lT"/>
+                                <include reference="rIG-gE-xvE"/>
                             </mask>
                         </variation>
                     </view>
@@ -207,6 +222,7 @@
     </scenes>
     <resources>
         <image name="chipmunk" width="100" height="100"/>
+        <image name="darthvader" width="100" height="100"/>
         <image name="fast" width="100" height="100"/>
         <image name="microphone" width="100" height="100"/>
         <image name="slow" width="100" height="100"/>
