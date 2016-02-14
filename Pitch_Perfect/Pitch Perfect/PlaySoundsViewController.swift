@@ -13,6 +13,9 @@ class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
+    var audioEngine:AVAudioEngine!
+    var audioFile:AVAudioFile!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +31,13 @@ class PlaySoundsViewController: UIViewController {
             print("No sound file found. Please check directory where sound file is expected and file type")
         }
         */
-        do{
+        //Audio Engine is initialized in viewDidLoad()
+        
         audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         audioPlayer.enableRate = true
-        }catch{
-            print("No sound file found. Please check directory where sound file is expected and file type")
-        }
+        
+        audioEngine = AVAudioEngine()
+        audioFile = try! AVAudioFile (forReading: receivedAudio.filePathUrl)
     }
     
     override func didReceiveMemoryWarning() {
@@ -58,10 +62,32 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func playChipmunkAudio(sender: UIButton) {
+        playAudioWithVariablePitch(1000)
+    }
+    func playAudioWithVariablePitch (pitch: Float){
+        audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
+        let audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        let timePitch = AVAudioUnitTimePitch()
+        timePitch.pitch = pitch
+        
+        audioEngine.attachNode(timePitch)
+        
+        audioEngine.connect(audioPlayerNode, to: timePitch, format: nil)
+        audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
+        
+        try! audioEngine.start()
+        audioPlayerNode.play()
         
     }
-    
-    
+
     @IBAction func stopAudio(sender: UIButton) {
        audioPlayer.stop() 
     }

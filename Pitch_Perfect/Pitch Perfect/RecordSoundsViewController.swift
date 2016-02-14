@@ -93,9 +93,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             file being currently saved on the phone
             */
             recordedAudio.filePathUrl = recorder.url
-            /*set the value of title attribute to the name 
-            (known as lastPathComponent) of the audio
-            file being currently saved on the phone
+            /*set the value of title attribute (known as lastPathComponent) to the name
+             of the audio file being currently saved on the phone
             */
             recordedAudio.title = recorder.url.lastPathComponent
         

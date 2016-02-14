@@ -138,11 +138,11 @@
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="47s-Jr-bws"/>
                             <constraint firstItem="XPD-3f-GIP" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="50" id="50m-4P-wbw"/>
                             <constraint firstItem="5fx-IW-Ig7" firstAttribute="centerX" secondItem="biu-dI-quo" secondAttribute="centerX" id="6yc-ei-7lT"/>
-                            <constraint firstItem="Z8n-7T-R4b" firstAttribute="top" secondItem="i4F-BJ-bmR" secondAttribute="bottom" constant="186" id="98m-ZJ-5qe"/>
                             <constraint firstItem="Z8n-7T-R4b" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="Azt-kr-PHf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPD-3f-GIP" secondAttribute="trailing" constant="30" id="Omh-cH-gO2"/>
                             <constraint firstItem="KiS-PS-AQn" firstAttribute="leading" secondItem="biu-dI-quo" secondAttribute="leadingMargin" constant="30" id="ZW6-Us-PPv"/>
                             <constraint firstItem="bFM-0b-oEE" firstAttribute="top" secondItem="5fx-IW-Ig7" secondAttribute="bottom" constant="100" id="rIG-gE-xvE"/>
+                            <constraint firstItem="Z8n-7T-R4b" firstAttribute="top" secondItem="KiS-PS-AQn" secondAttribute="bottom" constant="36" id="xDq-zx-Joq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -152,14 +152,14 @@
                                 <exclude reference="Z8n-7T-R4b"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="rIG-gE-xvE"/>
+                                <exclude reference="6yc-ei-7lT"/>
                                 <exclude reference="47s-Jr-bws"/>
                                 <exclude reference="ZW6-Us-PPv"/>
-                                <exclude reference="98m-ZJ-5qe"/>
-                                <exclude reference="Azt-kr-PHf"/>
                                 <exclude reference="50m-4P-wbw"/>
                                 <exclude reference="Omh-cH-gO2"/>
-                                <exclude reference="6yc-ei-7lT"/>
-                                <exclude reference="rIG-gE-xvE"/>
+                                <exclude reference="Azt-kr-PHf"/>
+                                <exclude reference="xDq-zx-Joq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -170,14 +170,14 @@
                                 <include reference="Z8n-7T-R4b"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="rIG-gE-xvE"/>
+                                <include reference="6yc-ei-7lT"/>
                                 <include reference="47s-Jr-bws"/>
                                 <include reference="ZW6-Us-PPv"/>
-                                <include reference="98m-ZJ-5qe"/>
-                                <include reference="Azt-kr-PHf"/>
                                 <include reference="50m-4P-wbw"/>
                                 <include reference="Omh-cH-gO2"/>
-                                <include reference="6yc-ei-7lT"/>
-                                <include reference="rIG-gE-xvE"/>
+                                <include reference="Azt-kr-PHf"/>
+                                <include reference="xDq-zx-Joq"/>
                             </mask>
                         </variation>
                     </view>
