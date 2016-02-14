@@ -1,0 +1,24 @@
+
+Description of App:- An iPhone app that will allow users to record their voice and will then modulate the recorded audio to sound like a Chipmunk or Darth Vader. This app will also let the user speed up or slow down the rate of playback.
+
+Things I learnt from making this App using the Udacity 'Intro to iOS App Development with Swift' course, are:-
+Thanks to this course assisting me to create this app, I have learnt the introduction of iOS and Xcode basic and fundamental knowledge and skills. This includes:-
+1. How to install Xcode
+2. The various settings, views and options within Xcode and how to use them. 
+3. The concept of MVC - Model, View and Controller
+4.  How to add view objects such as buttons and labels, and how to connect view objects with their relevant view controller, via IBActions and Outlets.
+5. How to add constraints for view objects on a StoryBoard. 
+6. The ViewController life cycle - e.g. Viewdidload, viewWilllAppear ...etc.
+7. How to compile and launch an App using various configurations and devices on a simulator. 
+8. How to add various media files - e.g. images and audio files.
+9. How to add images to buttons.
+10. UINavigationController and how it manages various ViewControllers within it, with Navigation bar and optional tab bar.
+11. Adding scenes in storyboard with their default ViewControllers via Segues that connect them together. 
+12. Playing a pre-recorded audio file, with slow and fast effect.
+13. Recording an audio file to be stored in a directory path.
+14. Concept of Delegates and utilising Apple written functions in a Protocol. 
+15. Model concept and creating custom class to store audio file details such as URL and Title of file in the custom class (The Model).
+16. Understanding of Segues - identifying them and passing files through them to the next/destination ViewController.  
+17. Playing recorded audio using chipmunk and Darth Vader effect, using the concept of AVAudioEngine and its various nodes (input, processing and output nodes). 
+18. Downloading App on your phone.   
+
