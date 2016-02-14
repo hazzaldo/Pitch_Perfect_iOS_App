@@ -22,3 +22,12 @@ Thanks to this course assisting me to create this app, I have learnt the introdu
 17. Playing recorded audio using chipmunk and Darth Vader effect, using the concept of AVAudioEngine and its various nodes (input, processing and output nodes). 
 18. Downloading App on your phone.   
 
+Alternative description of skills learnt from the course of creating this app:-
+1. Create a new project from existing iOS app templates
+2. Add buttons, images, labels and create user interfaces for the app using the Storyboard
+3. Leverage the Model View Controller (MVC) design principles; this includes writing custom model code, and using UIViewController, and UIView
+4. Create Outlet and Action connections between the views and view controllers. Benefit from the power of Delegates by using them in code
+5. Navigate between two scenes in the app using UINavigationController
+6. Play audio files using AVFoundation’s AVAudioEngine class
+7. Run the iOS simulator and download the app on a physical device
+8. Search documentation, resolve bugs, and read other people’s code
