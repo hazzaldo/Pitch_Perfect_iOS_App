@@ -10,41 +10,28 @@ import UIKit
 import AVFoundation
 
 class PlaySoundsViewController: UIViewController {
-    
+    //Declare Global variables
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        /* Use this code to play the movie quote audio file
-        // Do any additional setup after loading the view.
-        let string_path = NSBundle.mainBundle().pathForResource("movie_quote", ofType: "mp3")
-        let url_path = NSURL.fileURLWithPath(string_path!)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOfURL: url_path)
-            audioPlayer.enableRate = true
-        } catch {
-            print("No sound file found. Please check directory where sound file is expected and file type")
-        }
-        */
-        //Audio Engine is initialized in viewDidLoad()
-        
+        //initialise AVAudioPlayer with the saved Audio file URL
         audioPlayer = try! AVAudioPlayer(contentsOfURL: receivedAudio.filePathUrl)
         audioPlayer.enableRate = true
-        
+        //Audio Engine is initialized in viewDidLoad()
         audioEngine = AVAudioEngine()
+        //initialise AVAudioFile with the saved Audio file URL
         audioFile = try! AVAudioFile (forReading: receivedAudio.filePathUrl)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    //function, which plays audio file to be called by Slow and Fast audio functions
     func playAudio (){
         audioPlayer.stop()
         audioEngine.stop()
@@ -69,49 +56,49 @@ class PlaySoundsViewController: UIViewController {
     
     
     @IBAction func playDarthVaderAudio(sender: UIButton) {
-    playAudioWithVariablePitch(-1000)
+        playAudioWithVariablePitch(-1000)
     }
     
+    /*function which utilise AVAudioEngine to create and setup AVAudioUnitTimePitch
+     node to be then called and utilised by Chipmunk and DarthVader audio functions
+    to specify a pitch paratmeter that will give the desired pitch for the relevant 
+    sound effect
+    */
     func playAudioWithVariablePitch (pitch: Float){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
         
+        /*create nodes of AVAudioPlayerNode (input node) and AVAudioUnitTimePitch
+        (proccess node) to then attached to the AVAudioEngine ready to be connected 
+        in an active feed thread
+        */
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
-        
         let timePitch = AVAudioUnitTimePitch()
         timePitch.pitch = pitch
-        
         audioEngine.attachNode(timePitch)
-        
+        /* Connecting AVAudioPlayerNode and AVAudioUnitTimePitch to the AVAudioEngine
+        output node to create a full active chain feed thread, ready to feed audio
+        input
+        */
         audioEngine.connect(audioPlayerNode, to: timePitch, format: nil)
         audioEngine.connect(timePitch, to: audioEngine.outputNode, format: nil)
-        
+        //schedule time to play audio
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        
-        
+        //start AudioEngine and play AudioPlayer
         try! audioEngine.start()
         audioPlayerNode.play()
-        
     }
-
+    
+    //stop all audio being played
     @IBAction func stopAudio(sender: UIButton) {
        audioPlayer.stop()
        audioEngine.stop()
-        audioEngine.reset()
+       audioEngine.reset()
     }
     
 }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 

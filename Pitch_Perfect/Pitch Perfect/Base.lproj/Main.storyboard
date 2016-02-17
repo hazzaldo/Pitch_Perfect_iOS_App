@@ -39,26 +39,31 @@
                                     <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mhq-f9-BpZ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fh-QK-k2s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Once you finish recording, press the Stop button (square button) which will appear when you press the record button." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fh-QK-k2s">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
-                                <string key="text">Press the record button (mic button below) to start recording audio. Once you finish recording press the Stop button (square button) which will appear when you press the record button.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="75" y="156" width="248" height="70"/>
-                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Press the record button (mic button below) to start recording audio. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hiG-fu-xL7">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="hiG-fu-xL7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="Ntn-P0-F3b"/>
                             <constraint firstItem="5fh-QK-k2s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PJi-pD-hxC"/>
+                            <constraint firstItem="5fh-QK-k2s" firstAttribute="top" secondItem="hiG-fu-xL7" secondAttribute="bottom" constant="8" id="QHv-qu-h4j"/>
                             <constraint firstItem="gbf-tY-O60" firstAttribute="centerX" secondItem="W83-Mf-zLz" secondAttribute="centerX" id="TH7-8B-ibT"/>
                             <constraint firstItem="5fh-QK-k2s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="aZv-p9-3Go"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bAm-u0-lLh"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cgK-oF-IVI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5fh-QK-k2s" secondAttribute="trailing" constant="30" id="dzD-Ef-Dwy"/>
                             <constraint firstItem="gbf-tY-O60" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="70" id="i0O-nC-u1L"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hiG-fu-xL7" secondAttribute="trailing" constant="30" id="lcY-sL-maQ"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oHp-Tt-K1A"/>
                             <constraint firstItem="YmT-NU-8gy" firstAttribute="top" secondItem="W83-Mf-zLz" secondAttribute="bottom" constant="8" id="rRF-gb-gBF"/>
                             <constraint firstItem="W83-Mf-zLz" firstAttribute="top" secondItem="5fh-QK-k2s" secondAttribute="bottom" constant="20" id="yy3-17-Mzq"/>
@@ -69,9 +74,13 @@
                                 <exclude reference="W83-Mf-zLz"/>
                                 <exclude reference="gbf-tY-O60"/>
                                 <exclude reference="5fh-QK-k2s"/>
+                                <exclude reference="hiG-fu-xL7"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Ntn-P0-F3b"/>
+                                <exclude reference="lcY-sL-maQ"/>
                                 <exclude reference="PJi-pD-hxC"/>
+                                <exclude reference="QHv-qu-h4j"/>
                                 <exclude reference="aZv-p9-3Go"/>
                                 <exclude reference="dzD-Ef-Dwy"/>
                                 <exclude reference="bAm-u0-lLh"/>
@@ -89,9 +98,13 @@
                                 <include reference="W83-Mf-zLz"/>
                                 <include reference="gbf-tY-O60"/>
                                 <include reference="5fh-QK-k2s"/>
+                                <include reference="hiG-fu-xL7"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Ntn-P0-F3b"/>
+                                <include reference="lcY-sL-maQ"/>
                                 <include reference="PJi-pD-hxC"/>
+                                <include reference="QHv-qu-h4j"/>
                                 <include reference="aZv-p9-3Go"/>
                                 <include reference="dzD-Ef-Dwy"/>
                                 <include reference="bAm-u0-lLh"/>

@@ -13,14 +13,13 @@ import AVFoundation
 
 class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
-    //Declare Globally A variable is created for audioRecorder
+    //Declare Global variables
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
-    
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
-    
     @IBOutlet weak var recordButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,13 +27,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     override func viewWillAppear(animated: Bool) {
         stopButton.hidden = true
-        //TODO: enable record button
         recordButton.enabled = true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     @IBAction func recordAudio(sender: UIButton) {
@@ -47,23 +44,15 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         //The file will be saved in the documents directory
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
                                         .UserDomainMask, true)[0] as String
-        /* The commented-out code is to name recorded audio files using date & time stamp
-        //The current date is retrieved
-        let currentDateTime = NSDate()
-        //The object that will format the date is created
-        let formatter = NSDateFormatter()
-        //The date is formatted to ddMMyyyy-HHmmss
-        formatter.dateFormat = "ddMMyyyy-HHmmss"
-        //The .wav file is named with the date & time of the recording
-        let recordingName = formatter.stringFromDate(currentDateTime)+".wav"
-        */
-        //set the name of the recording to "my_audio"
+        //set the name of the recording to "my_audio" .wav as the extension.
         let recordingName = "my_audio.wav"
         //The location of the file and the file name are placed in an array
         let pathArray = [dirPath, recordingName]
         //The file path is created as a constant with the contents of the array
         let filePath = NSURL.fileURLWithPathComponents(pathArray)
-        //The file path is displayed on the screen
+        /*The file path is output by the compiler in case it is required to verify where 
+        the file is saved
+        */
         print(filePath)
         //A recording session is created
         let session = AVAudioSession.sharedInstance()
@@ -80,25 +69,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         //The app begins the recording
         audioRecorder.prepareToRecord()
         audioRecorder.record()
-      
     }
     
      //This method/function is where all the coding goes after the audio finish recording
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if (flag) {
         //Step 1- save the recorded audio
-            //intialise recordedAudio as an instance of RecordedAudio class
-            recordedAudio = RecordedAudio()
-            /*set the value of filePath attribute to the path of the audio
-            file being currently saved on the phone
+            /*intialise recordedAudio as an instance of RecordedAudio class
+             where the directory path of the audio file (in the form of AVAudioRecorder property 'url' of type NSURL) is assigned as the value of the 'filePathUrl' property
+            And where the name of the audio file (in the form of NSURL extension property 'lastPathComponent' of type String) is assigned as the value of the 'title' property.
             */
-            recordedAudio.filePathUrl = recorder.url
-            /*set the value of title attribute (known as lastPathComponent) to the name
-             of the audio file being currently saved on the phone
-            */
-            recordedAudio.title = recorder.url.lastPathComponent
-        
-            //TODO: Step 2- Move to the next scene aka perform segue
+            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent!)
+        //Step 2- Move to the next scene aka perform segue
             self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }else{
           print("Recording was not successful")
@@ -107,7 +89,8 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             stopButton.hidden = true
         }
     }
-    //This function is where we pass objects before moving to the next VC
+    
+    //This function is where we pass objects before moving to the next ViewController
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         /*this step becomes even more important when we have multiple segues 
         from the same VC
@@ -117,26 +100,29 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
              assigned to variable playSoundsVC
             */
             let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
-            /* where object (sender:AnyObject) to initiate segue is RecordedAudio
+            /* where the object (sender:AnyObject) to initiate segue is RecordedAudio
             (where audio file path and name is saved) and assigned to data variable
             */
             let data = sender as! RecordedAudio
+            /* 'data' variable is then assigned to 'receivedAudio' variable (declared in
+            PlaySoundsViewController), so that audio file data can be recieved by the 
+            PlaySoundsViewController scene
+            */
             playSoundsVC.receivedAudio = data
         }
     }
     
     @IBAction func stopAction(sender: UIButton) {
-        //TODO: Hide 'recording' label
+        //Hide 'recording' label
         recordingInProgress.hidden = true
         //enable record button
         recordButton.enabled = true
-        //TODO: stop recording
+        //stop recording
         audioRecorder.stop()
+        //deactivating audio session
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
     }
-    
-
 }
 
 
