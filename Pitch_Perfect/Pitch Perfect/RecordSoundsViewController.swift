@@ -19,10 +19,13 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var tapToRecord: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tapToRecord.text = "Tap to record"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,13 +36,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    //record audio button action
     @IBAction func recordAudio(sender: UIButton) {
         //show text "Recording in progress"
         recordingInProgress.hidden = false
-        //Disable record button
         recordButton.enabled = false
-        //show stopButton
         stopButton.hidden = false
         //The file will be saved in the documents directory
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory,
@@ -112,12 +114,10 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
     }
     
+    //Stop button action
     @IBAction func stopAction(sender: UIButton) {
-        //Hide 'recording' label
         recordingInProgress.hidden = true
-        //enable record button
         recordButton.enabled = true
-        //stop recording
         audioRecorder.stop()
         //deactivating audio session
         let audioSession = AVAudioSession.sharedInstance()

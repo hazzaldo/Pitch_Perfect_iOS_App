@@ -31,23 +31,26 @@ class PlaySoundsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    //function, which plays audio file to be called by Slow and Fast audio functions
-    func playAudio (){
+    func stopAudioPlayerAndEngine(){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
+    }
+    
+    //function, which plays audio file to be called by Slow and Fast audio functions
+    func playAudio (rate: Float){
+        audioPlayer.rate = rate
+        stopAudioPlayerAndEngine()
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
     }
     
     @IBAction func playSlowAudio(sender: UIButton) {
-        audioPlayer.rate = 0.5
-        playAudio()
+        playAudio(0.5)
     }
     
     @IBAction func playFastAudio(sender: UIButton) {
-        audioPlayer.rate = 1.5
-        playAudio()
+        playAudio(1.5)
     }
     
     @IBAction func playChipmunkAudio(sender: UIButton) {
@@ -65,9 +68,7 @@ class PlaySoundsViewController: UIViewController {
     sound effect
     */
     func playAudioWithVariablePitch (pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopAudioPlayerAndEngine()
         
         /*create nodes of AVAudioPlayerNode (input node) and AVAudioUnitTimePitch
         (proccess node) to then attached to the AVAudioEngine ready to be connected 
@@ -91,11 +92,9 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
-    //stop all audio being played
+    //stop all any audio being played
     @IBAction func stopAudio(sender: UIButton) {
-       audioPlayer.stop()
-       audioEngine.stop()
-       audioEngine.reset()
+       stopAudioPlayerAndEngine()
     }
     
 }
